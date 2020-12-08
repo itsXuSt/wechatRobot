@@ -82,10 +82,10 @@ def pushMsg(msg):
     # print(msg)
     robotMsg["markdown"]["content"] = msg
     data = json.dumps(robotMsg).encode("utf-8")
-    # if sorted(data) != sorted(lastData):
-    result = http.request("POST", config["wechatHook"], body=data, headers={"Content-Type": "application/json"})
-    print(result.data)
-    lastData = data
+    if sorted(data) != sorted(lastData):
+        result = http.request("POST", config["wechatHook"], body=data, headers={"Content-Type": "application/json"})
+        print(result.data)
+        lastData = data
 
 def startProcess():
     while 1:
