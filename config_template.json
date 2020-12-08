@@ -1,0 +1,21 @@
+{
+    "wechatHook": "",
+    "customMsgs": "最近要跑毒啦，大家戴好口罩哟 ヽ(*。>Д<)o゜",
+    "showNotVerified": 1,
+    "showDisliked": 0,
+    "enableWhiteList": 1,
+    "whiteList": [
+        "ut009999"
+    ],
+    "donBotherMe": {
+        "start": "20:00",
+        "end": "08:00"
+    },
+    "gerritUrls" : {
+        "changeDataUrl": "",
+        "commitDetailUrl": ""
+    },
+    "watchingProject": [
+        "this/is/project"
+    ]
+}
