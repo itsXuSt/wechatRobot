@@ -65,6 +65,7 @@ def composeMsg(commits):
             userName = commit["owner"]["display_name"];
         else:
             userName = commit["owner"]["name"]
+        userName = userName.replace("(成都)", "").replace("（成都）", "");
         branch = commit["branch"]
         if "commitDetailUrl" in config["gerritUrls"]:
             commitLink = str(config["gerritUrls"]["commitDetailUrl"]) % commit["project"]
@@ -100,7 +101,8 @@ def startProcess():
         for project in config["watchingProject"]:
             commits = requestGerritJson(project)
             msg += composeMsg(commits)
-        pushMsg(msg)
+        if msg != "":
+            pushMsg(msg)
         time.sleep(300) 
 
 startProcess()
